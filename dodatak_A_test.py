@@ -1,7 +1,6 @@
 import math
 import unittest
 
-from numpy import NaN
 import dodatak_A
 
 class DodatakATest(unittest.TestCase):
