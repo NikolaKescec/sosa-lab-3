@@ -1,5 +1,5 @@
 import getpass
-
+import os
 
 class OperationsManager():
 
@@ -9,13 +9,19 @@ class OperationsManager():
 
     def perform_division(self) -> float:
         """Divides a with b. If b is zero, returns NaN."""
-        return self.a / self.b
+        if self.b == 0:
+            return float("nan")
+        try:
+            result = self.a / self.b
+            return result
+        except Exception:
+            return float("nan")
 
 
 if __name__ == "__main__":
     user = input("Username: ")
     password = getpass.getpass("Password: ")
-    if user != "root" or password != "123":
+    if user != os.environ["user"] or password != os.environ["pass"]:
         print("Wrong username or password!")
         exit(0)
     else:
