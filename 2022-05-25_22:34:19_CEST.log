@@ -1,0 +1,66 @@
+EEE
+======================================================================
+ERROR: test_divide_with_not_a_float (__main__.DodatakATest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/lib/jenkins/workspace/sosa-pipeline/test/dodatak_A_test.py", line 14, in test_divide_with_not_a_float
+    self.assertTrue(math.isnan(operations_manager.perform_division()))
+  File "/var/lib/jenkins/workspace/sosa-pipeline/test/dodatak_A.py", line 12, in perform_division
+    return self.a / self.b
+TypeError: unsupported operand type(s) for /: 'int' and 'str'
+
+======================================================================
+ERROR: test_divide_with_not_a_number (__main__.DodatakATest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/lib/jenkins/workspace/sosa-pipeline/test/dodatak_A_test.py", line 18, in test_divide_with_not_a_number
+    self.assertTrue(math.isnan(operations_manager.perform_division()))
+  File "/var/lib/jenkins/workspace/sosa-pipeline/test/dodatak_A.py", line 12, in perform_division
+    return self.a / self.b
+TypeError: unsupported operand type(s) for /: 'int' and 'NoneType'
+
+======================================================================
+ERROR: test_divide_with_zero (__main__.DodatakATest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/lib/jenkins/workspace/sosa-pipeline/test/dodatak_A_test.py", line 10, in test_divide_with_zero
+    self.assertTrue(math.isnan(operations_manager.perform_division()))
+  File "/var/lib/jenkins/workspace/sosa-pipeline/test/dodatak_A.py", line 12, in perform_division
+    return self.a / self.b
+ZeroDivisionError: division by zero
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (errors=3)
+Run started:2022-05-25 20:34:21.668895
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '123'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: dodatak_A.py:18:37
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html
+17	    password = getpass.getpass("Password: ")
+18	    if user != "root" or password != "123":
+19	        print("Wrong username or password!")
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 20
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 1
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 0
+Files skipped (0):
